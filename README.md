@@ -13,3 +13,5 @@
 - 不管了
 
 如部分无效请卸载或..
+
+- [No Splash](https://github.com/H7ang0/KuaishouNoAds)
