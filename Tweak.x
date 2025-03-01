@@ -1,3 +1,5 @@
+// Use H7ang0's No Splash method "https://github.com/H7ang0/KuaishouNoAds"
+
 #import <UIKit/UIKit.h>
 
 @interface KSTabBarNewSlideFeedToolItemView : UIView
