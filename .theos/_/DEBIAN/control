@@ -7,5 +7,5 @@ Section: Tweaks
 Depends: mobilesubstrate (>= 0.9.5000)
 Icon: https://Mieing.Github.io/repo/file/kuaishou.png
 Architecture: iphoneos-arm64
-Version: 1.0.1-9
+Version: 1.0.1-11
 Installed-Size: 72
