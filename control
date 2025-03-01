@@ -1,0 +1,11 @@
+Package: cn.sttt.kwaihookui
+Name: KwaiHookUi
+Version: 1.0.1
+Architecture: iphoneos-arm
+Description: KwaiHookUi
+Maintainer: sttt
+Author: sttt
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
+Icon: https://Mieing.Github.io/repo/file/kuaishou.png
+
