@@ -1,4 +1,4 @@
-// Use H7ang0's No Splash method "https://github.com/H7ang0/KuaishouNoAds"
+// by Mieing 25.3.3
 
 #import <UIKit/UIKit.h>
 
@@ -34,6 +34,10 @@
 - (void)layoutSubviews;
 @end
 
+@interface KSDanmakuCellContentView : UIView
+- (UIColor *)generateRandomColor;
+@property (nonatomic, strong) UILabel *contentLabel;
+@end
 
 // 移除音乐转盘
 %hook KSTabbarMusicDiskRootView 
@@ -52,17 +56,15 @@
 - (void)layoutSubviews {
     %orig;
 
-    // 获取accessibilityLabel
     NSString *accessibilityLabel = self.accessibilityLabel;
 
-    // 隐藏收藏按钮
     if ([accessibilityLabel containsString:@"未收藏，收藏"]) {
-        ((UIView *)self).hidden = YES;  // 隐藏按钮
+        ((UIView *)self).hidden = YES;
     }
 
-    // 隐藏分享按钮
     if ([accessibilityLabel containsString:@"分享"]) {
-        ((UIView *)self).hidden = YES;  // 隐藏按钮
+        ((UIView *)self).hidden = YES;
+
     }
 }
 
@@ -98,31 +100,28 @@
 
 %end
 
-
+// Ad
 %hook KSLocalPagePendantAdsorpView
 
-// 隐藏广告视图并阻止其显示
+
 - (void)layoutSubviews {
     %orig;
-    ((UIView *)self).hidden = YES;  // 隐藏广告视图
+    ((UIView *)self).hidden = YES;
+
 }
 
-// 移除广告视图的初始化配置
 - (void)configAdsorpViewWithItem:(id)item {
-    // 不做任何事情，防止广告被显示或初始化
+
 }
 
-// 钩住关闭广告按钮的点击事件，防止关闭广告的操作
+
 - (void)didClickCloseButton {
-    // 什么都不做，防止关闭广告按钮起作用
 }
 
-// 移除广告的按钮视图（如果按钮是一个独立视图的话）
 - (void)removeCloseButton {
-    // 获取关闭按钮并强制转换为 UIView 类型
     id closeButton = [self closeButton];
     if (closeButton) {
-        [(UIView *)closeButton setHidden:YES];  // 隐藏按钮
+        [(UIView *)closeButton setHidden:YES];
     }
 }
 
@@ -140,26 +139,44 @@
 
 %end
 
-// 同城顶部广告
-%hook KSLocalHeaderCollectionView
+/*
+// 隐藏同城顶栏
+%hook KSLocalHeaderCollectionCell
 
-- (void)layoutSubviews {
+- (void)didMoveToSuperview {
     %orig;
-
-    // 隐藏整个UICollectionView
-    self.hidden = YES;
-    
-    // 也可以使用[self setHidden:YES]来隐藏具体的视图元素，避免完全移除
+    if (self.superview) {
+        [self removeFromSuperview];
+    }
 }
 
 %end
+*/
 
-// 同城顶部广告
-%hook KSLocalHeaderCollectionCell
+// 隐藏底栏皮肤
+%hook KSCubeRFBottomBarView
+- (void)setFromBgImageView:(id)arg1 {
+}
+%end
 
+// 随机颜色弹幕
+%hook KSDanmakuCellContentView
 - (void)layoutSubviews {
     %orig;
-    [self removeFromSuperview];
+    if (self.contentLabel && !self.contentLabel.hidden) {
+        UIColor *randomColor = [self generateRandomColor];
+        self.contentLabel.textColor = randomColor;
+    }
 }
 
+%new
+- (UIColor *)generateRandomColor {
+    u_int32_t red = arc4random_uniform(256);
+    u_int32_t green = arc4random_uniform(256);
+    u_int32_t blue = arc4random_uniform(256);
+    return [UIColor colorWithRed:red/255.0f
+                         green:green/255.0f
+                          blue:blue/255.0f
+                         alpha:1.0];
+}
 %end
