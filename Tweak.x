@@ -130,7 +130,7 @@
 
 %end
 
-
+/*
 // 屏蔽启动广告
 %hook KSAdSplashViewController
 
@@ -141,6 +141,7 @@
 }
 
 %end
+*/
 
 /*
 // 隐藏同城顶栏
