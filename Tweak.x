@@ -39,6 +39,9 @@
 @property (nonatomic, strong) UILabel *contentLabel;
 @end
 
+@interface KSCubeHomeTopBarItemButton : UIButton
+@end
+
 // 移除音乐转盘
 %hook KSTabbarMusicDiskRootView 
 
@@ -50,7 +53,7 @@
 %end
 
 
-// 移除按钮
+// 移除收藏、分享按钮
 %hook KSTabBarNewSlideFeedToolItemView
 
 - (void)layoutSubviews {
@@ -178,5 +181,26 @@
                          green:green/255.0f
                           blue:blue/255.0f
                          alpha:1.0];
+}
+%end
+
+// 移除商城、热门按钮
+%hook KSCubeHomeTopBarItemButton
+
+- (void)layoutSubviews {
+    %orig;
+    
+    if (self.currentTitle && 
+       ([self.currentTitle isEqualToString:@"商城"] || 
+        [self.currentTitle isEqualToString:@"热门"])) {
+        [self removeFromSuperview];
+    }
+}
+
+%end
+
+// 移除我页面的“上周数据更新”
+%hook KSProfileWeeklyReportButton
+- (void)setupSubviews {
 }
 %end
