@@ -18,7 +18,7 @@
 
 </details>
 
-#### 如部分无效请卸载或...
+如部分无效请卸载或...
 
 - [KwaiDisplayPublishTime](https://github.com/Mieing/KwaiDisplayPublishTime)
 
