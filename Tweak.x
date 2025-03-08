@@ -52,7 +52,6 @@
 
 %end
 
-
 // 移除收藏、分享按钮
 %hook KSTabBarNewSlideFeedToolItemView
 
@@ -203,5 +202,12 @@
 // 移除我页面的“上周数据更新”
 %hook KSProfileWeeklyReportButton
 - (void)setupSubviews {
+}
+%end
+
+// 始终显示视频发布时间
+%hook KSSlidePublishTimeProvider
+- (bool)canShowElement {
+	return 1;
 }
 %end
