@@ -20,6 +20,6 @@
 
 如部分无效请卸载或...
 
-[KwaiDisplayPublishTime](https://github.com/Mieing/KwaiDisplayPublishTime)
+- [KwaiDisplayPublishTime](https://github.com/Mieing/KwaiDisplayPublishTime)
 
 - ~~[No Splash](https://github.com/H7ang0/KuaishouNoAds)~~
