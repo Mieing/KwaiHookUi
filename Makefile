@@ -13,7 +13,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = KwaiHookUi
 
-KwaiHookUi_FILES = Tweak.x
+KwaiHookUi_FILES = KwaiHookUi.x
 KwaiHookUi_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk

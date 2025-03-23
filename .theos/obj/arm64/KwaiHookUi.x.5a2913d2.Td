@@ -1,11 +1,14 @@
-/var/jb/var/mobile/KwaiHookUi/.theos/obj/arm64/Tweak.x.5a2913d2.o: \
-  /var/jb/var/mobile/KwaiHookUi/.theos/obj/arm64/Tweak.x.m \
+/var/jb/var/mobile/KwaiHookUi/.theos/obj/arm64/KwaiHookUi.x.5a2913d2.o: \
+  /var/jb/var/mobile/KwaiHookUi/.theos/obj/arm64/KwaiHookUi.x.m \
   /private/preboot/80CCB6E4559E791CBFE96333CFBB8AACBE430CFE3B844E7D36B46E8A5C0881181746645BE4A7FAF1CA6A2DD6F00083BE/dopamine-z2WWVQ/procursus/var/mobile/theos/Prefix.pch \
+  /var/jb/var/mobile/KwaiHookUi/KwaiHeaders.h \
   /private/preboot/80CCB6E4559E791CBFE96333CFBB8AACBE430CFE3B844E7D36B46E8A5C0881181746645BE4A7FAF1CA6A2DD6F00083BE/dopamine-z2WWVQ/procursus/var/mobile/theos/vendor/include/substrate.h \
   /private/preboot/80CCB6E4559E791CBFE96333CFBB8AACBE430CFE3B844E7D36B46E8A5C0881181746645BE4A7FAF1CA6A2DD6F00083BE/dopamine-z2WWVQ/procursus/var/mobile/theos/vendor/lib/iphone/rootless/CydiaSubstrate.framework/Modules/module.modulemap \
   /private/preboot/80CCB6E4559E791CBFE96333CFBB8AACBE430CFE3B844E7D36B46E8A5C0881181746645BE4A7FAF1CA6A2DD6F00083BE/dopamine-z2WWVQ/procursus/var/mobile/theos/vendor/lib/iphone/rootless/CydiaSubstrate.framework/Headers/CydiaSubstrate.h
 
 /private/preboot/80CCB6E4559E791CBFE96333CFBB8AACBE430CFE3B844E7D36B46E8A5C0881181746645BE4A7FAF1CA6A2DD6F00083BE/dopamine-z2WWVQ/procursus/var/mobile/theos/Prefix.pch:
+
+/var/jb/var/mobile/KwaiHookUi/KwaiHeaders.h:
 
 /private/preboot/80CCB6E4559E791CBFE96333CFBB8AACBE430CFE3B844E7D36B46E8A5C0881181746645BE4A7FAF1CA6A2DD6F00083BE/dopamine-z2WWVQ/procursus/var/mobile/theos/vendor/include/substrate.h:
 
