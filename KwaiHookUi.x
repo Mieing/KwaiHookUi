@@ -90,33 +90,6 @@
 
 %end
 
-/*
-// 屏蔽启动广告
-%hook KSAdSplashViewController
-
-- (void)viewDidLoad {
-    %orig;
-    [self.view removeFromSuperview];
-    [self dismissViewControllerAnimated:NO completion:nil];
-}
-
-%end
-*/
-
-/*
-// 隐藏同城顶栏
-%hook KSLocalHeaderCollectionCell
-
-- (void)didMoveToSuperview {
-    %orig;
-    if (self.superview) {
-        [self removeFromSuperview];
-    }
-}
-
-%end
-*/
-
 // 隐藏底栏皮肤
 %hook KSCubeRFBottomBarView
 - (void)setFromBgImageView:(id)arg1 {
@@ -171,4 +144,30 @@
 - (bool)canShowElement {
 	return 1;
 }
+%end
+
+// 隐藏长图点击查看按钮
+%hook KSTabBarFeedAtlasSimpleEntranceView
+
+- (void)setCenter:(CGPoint)center {
+    center.x += 500;
+    self.hidden = YES;
+    %orig(center);
+}
+
+- (void)setHidden:(BOOL)hidden {
+    %orig(hidden);
+}
+
+%end
+
+// 移除同城页面顶栏横幅
+%hook KSLocalHeaderCollectionView
+
+- (CGRect)frame {
+    CGRect orig = %orig;
+    [self removeFromSuperview];
+    return CGRectMake(orig.origin.x, orig.origin.y, 0, 0);
+}
+
 %end

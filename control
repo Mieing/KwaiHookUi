@@ -1,6 +1,6 @@
-Package: cn.sttt.kwaihookui
+Package: cn.fries.kwaihookui
 Name: KwaiHookUi
-Version: 1.0.5
+Version: 1.0.6
 Architecture: iphoneos-arm
 Description: KwaiHookUi
 Maintainer: sttt

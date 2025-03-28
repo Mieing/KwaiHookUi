@@ -2,6 +2,15 @@
 
 #import <UIKit/UIKit.h>
 
+@interface KSHomeNotifyDotView : UIView
+@end
+
+@interface KSTabBarFeedAtlasSimpleEntranceView : UIView
+@end
+
+@interface KSTabBarFeedPhotoAtlasEntranceIconTextView : UIView
+@end
+
 @interface KSTabBarNewSlideFeedToolItemView : UIView
 @end
 
