@@ -133,6 +133,32 @@
 
 %end
 
+// 移除暑假心愿按钮
+%hook KSCubeHomeTopBarItemButton
+
+- (void)didMoveToSuperview {
+    %orig;
+
+    if ([self respondsToSelector:@selector(cubePageId)]) {
+        NSInteger pageId = self.cubePageId;
+        if (pageId == 6666 && self.superview) {
+            [self removeFromSuperview];
+        }
+    }
+}
+
+- (BOOL)isEnabled {
+    if ([self respondsToSelector:@selector(cubePageId)]) {
+        NSInteger pageId = self.cubePageId;
+        if (pageId == 6666) {
+            return NO;
+        }
+    }
+    return %orig;
+}
+
+%end
+
 // 移除我页面的“上周数据更新”
 %hook KSProfileWeeklyReportButton
 - (void)setupSubviews {

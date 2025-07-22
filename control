@@ -1,11 +1,10 @@
-Package: cn.fries.kwaihookui
+Package: com.fries.kwaihookui
 Name: KwaiHookUi
-Version: 1.0.6
+Version: 1.0.7
 Architecture: iphoneos-arm
 Description: KwaiHookUi
-Maintainer: sttt
-Author: sttt
+Maintainer: fries
+Author: fries
 Section: Tweaks
 Depends: mobilesubstrate (>= 0.9.5000)
 Icon: https://Mieing.Github.io/repo/file/kuaishou.png
-

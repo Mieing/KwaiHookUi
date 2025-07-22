@@ -49,4 +49,5 @@
 @end
 
 @interface KSCubeHomeTopBarItemButton : UIButton
+@property (nonatomic, assign) NSInteger cubePageId;
 @end
